@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup as bs
 from . import *
 XX = "A servant appeared!"
 YY = "A qt waifu appeared!" 
-@cipherx.on(events.NewMessage(incoming=True))
+@bot.on(events.NewMessage(incoming=True))
 async def reverse(event):
     if not event.media:
         return
@@ -35,7 +35,7 @@ async def reverse(event):
     div = xx.find("div", {"class": "r5a77d"})
     alls = div.find("a")
     text = alls.text
-    send = await @cipherx.send_message(event.chat_id, f"/protecc {text}")
+    send = await @bot.on.send_message(event.chat_id, f"/protecc {text}")
     await sleep(2)
     await send.delete()
     os.remove(dl)
